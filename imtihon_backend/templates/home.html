@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bosh Sahifa</title>
+</head>
+<body style="background-color: #cecece; font-family: Calibri">
+<div style="background-color: white; width: 100%; height: 50px; margin-top: -15px; border-radius: 10px">
+    <h2 style="font-size: 20px; position: absolute; left: 45%">Bosh Sahifa</h2>
+    <a href="/addpost/"><h2 style="font-size: 20px; position: absolute; left: 55%; color: black">Maqola Qo'shish</h2></a>
+    <a href="/logout/"><h2 style="font-size: 20px; position: absolute; left: 65%; color: black">Chiqish</h2></a>
+</div>
+{% for i in articles %}
+        <a href="/detail/{{ i.id }}/"><h1 style="color: black">{{ i.title }}</h1></a>
+        <h3>{{ i.text | slice:'0:250' }}...</h3>
+        <h4>Muallif : {{ i.author }}</h4>
+        <a href="/detail/{{ i.id }}/"><button style="color: blue; background-color: aqua; border-color: white; border-radius: 5px">Batafsil</button></a>
+        <hr>
+    {% endfor %}
+</body>
+</html>
